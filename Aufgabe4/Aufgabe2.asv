@@ -1,0 +1,21 @@
+h = e-5;
+step = nthroot(1e5,100);
+
+for i = [1:1:101]
+    h = 
+end
+
+
+f2p_deriv_ar = zeros(101,1);
+f3p_ep_deriv_ar = zeros(101,1);
+f3p_mp_deriv_ar = zeros(101,1);
+f5p_mp_deriv_ar = zeros(101,1);
+for i = [1:1:101]
+    f2p_deriv_ar(i) = (fx(x0+h)-fx(x0))/h;
+    f3p_ep_deriv_ar(i) = (-3*fx(x0)+4*fx(x0+h)-fx(x0+2*h))/2/h;
+    f3p_mp_deriv_ar(i) = (fx(x0+h)-fx(x0-h))/2/h;
+    f5p_mp_deriv_ar(i) = (fx(x0-2*h)-8*fx(x0-h)+8*fx(x0+h)-fx(x0+2*h)/12/h;
+    h = h*step;
+end
+
+plot(h,f2p_deriv_ar
