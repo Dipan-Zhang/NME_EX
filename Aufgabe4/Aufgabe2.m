@@ -1,4 +1,5 @@
 h = 1e-5;
+x0 = 0.6;
 step = nthroot(1e5,100);
 h_coord = zeros(101,1);
 for i = [1:1:101]
@@ -27,12 +28,21 @@ errors_f3p_ep = abs(f_deriv_exact_ar - f3p_ep_deriv_ar);
 errors_f3p_mp = abs(f_deriv_exact_ar - f3p_mp_deriv_ar);
 errors_f5p_mp = abs(f_deriv_exact_ar - f5p_mp_deriv_ar);
 
-plot(log(h_coord),log(errors_f2p),'r');
+loglog(h_coord,errors_f2p,'r');
 hold on;
-plot(log(h_coord),log(errors_f3p_ep),'g');
-plot(log(h_coord),log(errors_f3p_mp),'b');
-plot(log(h_coord),log(errors_f5p_mp),'k');
-plot(log(h_coord),log(h_coord),'c');
-plot(log(h_coord),log(h_coord.^2),'c');
-plot(log(h_coord),log(h_coord.^4),'c');
+loglog(h_coord,errors_f3p_ep,'g');
+loglog(h_coord,errors_f3p_mp,'b');
+loglog(h_coord,errors_f5p_mp,'k');
+loglog(h_coord,h_coord,'c');
+loglog(h_coord,h_coord.^2,'c');
+loglog(h_coord,h_coord.^4,'c');
+
+% plot(log(h_coord),log(errors_f2p),'r');
+% hold on;
+% plot(log(h_coord),log(errors_f3p_ep),'g');
+% plot(log(h_coord),log(errors_f3p_mp),'b');
+% plot(log(h_coord),log(errors_f5p_mp),'k');
+% plot(log(h_coord),log(h_coord),'c');
+% plot(log(h_coord),log(h_coord.^2),'c');
+% plot(log(h_coord),log(h_coord.^4),'c');
 %plot(h_coord,f5p_mp_deriv_ar,'k');

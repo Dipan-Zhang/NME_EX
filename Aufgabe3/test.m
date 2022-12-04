@@ -1,7 +1,5 @@
 
-
 %test
-
 y_values = [0 1 3 1];
 
 
