@@ -3,7 +3,7 @@ function gaussx = gx(n)
         case 1
             gaussx = 0;
         case 2
-            gaussx = [-1/sqrt(3),1/sqrt(3)];
+            gaussx = [-1/sqrt(3),1/sqrt(3)]; %1x2
         case 3
             gaussx = [-sqrt(0.6),0,sqrt(0.6)];
         otherwise

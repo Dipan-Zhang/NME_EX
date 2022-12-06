@@ -1,7 +1,7 @@
 function gaussw = gw2dref(n)
     switch(n)
         case 1
-            gaussw = [4.0];%1x1
+            gaussw = 4.0;%1x1
         case 2
             gaussw = [1.0;1.0;1.0;1.0];%4x1
         case 3

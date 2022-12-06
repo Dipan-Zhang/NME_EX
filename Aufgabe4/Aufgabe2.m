@@ -34,15 +34,8 @@ loglog(h_coord,errors_f3p_ep,'g');
 loglog(h_coord,errors_f3p_mp,'b');
 loglog(h_coord,errors_f5p_mp,'k');
 loglog(h_coord,h_coord,'c');
-loglog(h_coord,h_coord.^2,'c');
-loglog(h_coord,h_coord.^4,'c');
-
-% plot(log(h_coord),log(errors_f2p),'r');
-% hold on;
-% plot(log(h_coord),log(errors_f3p_ep),'g');
-% plot(log(h_coord),log(errors_f3p_mp),'b');
-% plot(log(h_coord),log(errors_f5p_mp),'k');
-% plot(log(h_coord),log(h_coord),'c');
-% plot(log(h_coord),log(h_coord.^2),'c');
-% plot(log(h_coord),log(h_coord.^4),'c');
-%plot(h_coord,f5p_mp_deriv_ar,'k');
+loglog(h_coord,h_coord.^2,'color','[0.8500 0.3250 0.0980]');
+loglog(h_coord,h_coord.^4,'color','[0.9290 0.6940 0.1250]');
+xlabel('h')
+ylabel('error')
+legend('f2p','f3p_ep','f3p_mp','f5p','h','h^2','h^4');
