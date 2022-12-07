@@ -13,7 +13,4 @@ function wert_dbasis = LagrangeDerivBasis(x,n,i,x_node)
            wert_dbasis = wert_dbasis+ wert_mlti/(x_node(i,:)-x_node(m,:));
        end
     end
-
-
-
 end

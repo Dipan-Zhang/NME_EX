@@ -2,7 +2,7 @@
 theta = 1;
 timestep = 0.2;
 
-k = 4/timestep + 2;
+k = 2/timestep + 2;
 fai_VE = zeros(k,1);
 
 t_n = 0;
@@ -10,7 +10,7 @@ fai_n = 0;
 n = 1;
 
 %% vorwaerts Euler
-for t =0:timestep:4
+for t =0:timestep:2
     fai_n_plus_1 = fai_n + theta*timestep*f1(t_n,fai_n);
     fai_VE(n+1) = fai_n_plus_1;
     t_n = t + timestep;
@@ -19,7 +19,7 @@ for t =0:timestep:4
 end
 
 
-t =0:timestep:4+timestep;
+t =0:timestep:2+timestep;
 plot(t,fai_VE,'b');
 hold on;
 plot(t,fai_std(t),'k');
@@ -34,14 +34,14 @@ theta = 1;
 
 n = 1;
 sol = 0;
-for t =0:timestep:4
+for t =0:timestep:2
     C = [ (t+timestep)^2*exp(-5*(t+timestep)), t^2*exp(-5*t)];
     [LHS_RE,RHS_RE] = OST(theta,timestep,M,B,C,sol);
     sol = LHS_RE\RHS_RE;
     fai_RE(n+1) = sol;
     n = n + 1;
 end
-t =0:timestep:4+timestep;
+t =0:timestep:2+timestep;
 plot(t,fai_RE,'y');
 
 
@@ -52,14 +52,14 @@ t_n = 0;
 fai_n = 0;
 n = 1;
 sol = 0;
-for t =0:timestep:4
+for t =0:timestep:2
     C = [ (t+timestep)^2*exp(-5*(t+timestep)), t^2*exp(-5*t)];
     [LHS_RE,RHS_RE] = OST(theta,timestep,M,B,C,sol);
     sol = LHS_RE\RHS_RE;
     fai_TR(n+1) = sol;
     n = n + 1;
 end
-t =0:timestep:4+timestep;
+t =0:timestep:2+timestep;
 plot(t,fai_TR,'r');
 legend('VE','Exact','RE','TR');
 
